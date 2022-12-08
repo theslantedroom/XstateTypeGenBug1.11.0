@@ -7,37 +7,34 @@ export interface Typegen0 {
   };
   invokeSrcNameMap: {};
   missingImplementations: {
-    actions: "resetContext";
-    services: never;
-    guards: never;
+    actions: never;
     delays: never;
+    guards: never;
+    services: "trjh78";
   };
-  eventsCausingActions: {
-    resetContext: "RESET_CONTEXT";
-  };
-  eventsCausingServices: {};
-  eventsCausingGuards: {};
+  eventsCausingActions: {};
   eventsCausingDelays: {};
+  eventsCausingGuards: {};
+  eventsCausingServices: {
+    trjh78: never;
+  };
   matchesStates:
     | "deviceCheck"
     | "error"
     | "getUserMedia"
     | "gumError"
     | "inCall"
-    | "inCall.awaitingAnswerTimer"
-    | "inCall.awaitingAnswerTimer.running"
+    | "inCall.awaiting"
+    | "inCall.awaiting.running"
     | "inCall.localRecording"
     | "inCall.localRecording.false"
     | "inCall.localRecording.true"
     | "leavingCall"
     | {
         inCall?:
-          | "awaitingAnswerTimer"
+          | "awaiting"
           | "localRecording"
-          | {
-              awaitingAnswerTimer?: "running";
-              localRecording?: "false" | "true";
-            };
+          | { awaiting?: "running"; localRecording?: "false" | "true" };
       };
   tags: never;
 }

@@ -24,7 +24,6 @@ export const callMachine = createMachine(
     },
     on: {
       RESET_CONTEXT: {
-        actions: "resetContext",
         target: "getUserMedia",
       },
     },
@@ -61,7 +60,7 @@ export const callMachine = createMachine(
               },
             },
           },
-          awaitingAnswerTimer: {
+          awaiting: {
             initial: "running",
             states: {
               running: {

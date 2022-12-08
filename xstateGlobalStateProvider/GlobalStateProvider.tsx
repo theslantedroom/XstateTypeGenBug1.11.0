@@ -19,7 +19,8 @@ export const GlobalContext = createContext({
 
 export const GlobalStateProvider: React.FC<{
   children: React.ReactNode;
-}> = ({ meteorContext, meteorMethods, children }) => {
+}> = ({ children }) => {
+  // BUG is here { devTools: false }: note that XState VSCode v1.11.0 has a TypeScriptError, 1.10.0 does not.
   const callService = useInterpret(callMachine, { devTools: false });
 
   useLayoutEffect(() => {
